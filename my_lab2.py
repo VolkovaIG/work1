@@ -1,3 +1,20 @@
+# import math
+import math
+from math import pi
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from enum import Enum, unique
+
+
+# class Point(ABC):
+    # color = None
+# @unique
+# class COLOR(Enum):
+#     'желтый' = 1
+#     'красные' = 2
+
+
+
 class Figure(ABC):
     classname = None
 
@@ -7,6 +24,7 @@ class Figure(ABC):
         self._x = 0
         self._y = 0
         self.__color = ''
+        self._area = ()
     @property   #getter
     def x(self):
         return self._x
@@ -27,6 +45,9 @@ class Figure(ABC):
     def y(self, value):
         return value
 
+    @y.setter  # setter
+    def color(self, value):
+        return value
 
     def __str__(self):
         return f'{self.x}, {self.y}, {self.color}'
@@ -36,7 +57,21 @@ class Figure(ABC):
 
 class Circle(Figure):
     classname = 'Круг'
-    
-    def __init__(self, x, y, r):
-        super().__init__(x, y, r)
-        self._area = math.pi * self.r ** 2
+
+    def __init__(self, x, y, r, color):
+        super().__init__(x, y, color)
+        self._r = r
+
+    def __str__(self):
+        return f'x = {self._x}, y = {self._y}, r = {self._r}, color: {self._color}'
+
+    @property
+    def r(self):
+        return self._r
+
+    @r.setter
+    def r(self, value):
+        self._r = value
+
+    def area(self):
+        return math.pi * self._r ** 2
