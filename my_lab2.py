@@ -6,12 +6,11 @@ from dataclasses import dataclass
 from enum import Enum, unique
 
 
-# class Point(ABC):
-    # color = None
-# @unique
-# class COLOR(Enum):
-#     'желтый' = 1
-#     'красные' = 2
+@unique
+class COLOR(Enum):
+    желтый = 1
+    красный = 2
+    зеленый = 3 # и т.д.
 
 
 
