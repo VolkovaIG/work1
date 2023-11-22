@@ -26,3 +26,17 @@ class Figure(ABC):
     @y.setter  # setter
     def y(self, value):
         return value
+
+
+    def __str__(self):
+        return f'{self.x}, {self.y}, {self.color}'
+
+
+
+
+class Circle(Figure):
+    classname = 'Круг'
+    
+    def __init__(self, x, y, r):
+        super().__init__(x, y, r)
+        self._area = math.pi * self.r ** 2
