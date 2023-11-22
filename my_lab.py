@@ -9,7 +9,7 @@ class Point:
         self.y = y
 
     def __str__(self):
-        return self.x, self.y, self.color
+        return f'{self.x}, {self.y}, {self.color}'
 
     def set_color(self, color):
         self.color = color
