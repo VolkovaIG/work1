@@ -23,7 +23,7 @@ class Figure(ABC):
         self.name = name
         self._x = 0
         self._y = 0
-        self.__color = ''
+         self._color = Color
         self._area = ()
     @property   #getter
     def x(self):
